@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!-- <meta
+      name="description"
+      content="Web site created using create-react-app"
+    /> -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="/photoshop/src/index.css">
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Photshop</title>
+  </head>
+    <body>
+      <div class="main">
+         <div class="Tools">
+            <ul>
+               <li>
+                  <i class='bx bxs-brightness-half'></i>
+                  <p>BrightNess</p>
+               </li>
+               <li>
+                  <i class='bx bxs-brush' ></i>
+                  <p>Blur</p>
+               </li>
+               <li>
+                  <i class='bx bxs-collection' ></i>
+                  <p>GreyScale</p>
+               </li>
+               <li>
+                  <i class='bx bxs-color-fill' ></i>
+                  <p>Hue Rotate</p>
+               </li>
+               <li>
+                  <i class='bx bxs-magic-wand' ></i>
+                  <p>Saturation</p>
+               </li>
+               <li onclick="Download_btn()">
+                  <i class='bx bx-export' ></i>
+                  <p>Export</p>
+               </li>
+            </ul>
+         </div>
+         <div class="content">
+            <p id="logo">Photo Editor</p>
+            <div class="choose_image">
+               <div class="upload_img_box">
+                  <i class='bx bxs-image-add' ></i><br>
+                  <input type="file" name="selectedImage" id="selectedImage" accept="image/jpeg, image/png">
+                  <p id="hint">choose Image from folder</p>
+               </div>
+            </div>
+            <canvas id="image_canvas"></canvas>
+            <div class="image_holder">
+               <button id="remove_img_btn"><i class='bx bxs-message-square-x' ></i></button>
+               <img src="" alt="img" id="image">
+            </div>
+            <div class="options">
+               <div class="option">
+                  <input type="range" max="200" min="0" value="100" id="brightness" class="slider">
+                  <p id="brightVal" class="show_value">100</p>
+               </div>
+               <div class="option">
+                  <input type="range" max="40" min="0" value="0" id="blur" class="slider">
+                  <p id="blurVal" class="show_value">0</p>
+               </div>
+               <div class="option">
+                  <input type="range" max="100" min="0" value="0" id="greyScale" class="slider">
+                  <p id="greyVal" class="show_value">0</p>
+               </div>
+               <div class="option">
+                  <input type="range" max="100" min="0" value="0" id="hue" class="slider">
+                  <p id="hueVal" class="show_value">0</p>
+               </div>
+               <div class="option">
+                  <input type="range" max="100" min="1" value="1" id="saturation" class="slider">
+                  <p id="saturationVal" class="show_value">1</p>
+               </div>
+            </div>
+            <button id="clearAll"><span>Reset</span><i class='bx bx-reset' ></i></button>
+         </div>
+      </div>
+      <script src="main.js"></script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
